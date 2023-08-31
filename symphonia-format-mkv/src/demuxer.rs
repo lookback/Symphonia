@@ -348,7 +348,7 @@ impl FormatReader for MkvReader {
                         let destination = match segment_pos.checked_add(element.position) {
                             Some(pos) => pos,
                             None => {
-                                println!("seek position overflow for {:?}", etype);
+                                log::info!("seek position overflow for {:?}", etype);
                                 continue;
                             }
                         };
